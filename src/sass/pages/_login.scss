@@ -1,0 +1,76 @@
+@use "../abstracts" as *;
+
+:root {
+  touch-action: pan-x pan-y;
+  height: 100%;
+}
+
+main {
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+}
+
+.form-container {
+  height: 520px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  @extend %card-shadow;
+
+  div.logo {
+    --s: 250px;
+    width: var(--s);
+    height: var(--s);
+    display: grid;
+    place-items: center;
+  }
+
+  .form-wrapper {
+    width: 360px;
+  }
+
+  form {
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+
+    input {
+      width: 100%;
+      align-self: flex-start;
+
+      &:focus {
+        outline: 2px inset var(--clr-text);
+      }
+
+      &[type="password"],
+      &[type="text"] {
+        padding: 8px;
+        border-radius: 0.3rem;
+        border: 2px solid rgba($color: #000, $alpha: 0.4);
+      }
+
+      &[type="submit"] {
+        margin-top: 0.2rem;
+        color: #fff;
+
+        &:focus {
+          outline: 2px inset var(--clr-text);
+        }
+      }
+    }
+  }
+
+  .app-title {
+    font-size: var(--fs-200);
+    margin-bottom: -20px;
+    text-align: center;
+    font-weight: var(--fw-bold);
+  }
+}
